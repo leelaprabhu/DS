@@ -1,0 +1,492 @@
+bs 10,20,30,35,50
+added 20-10
+added 35-30
+added 35-50
+elected 20
+elected 50
+bs 20,50
+added 30-20
+elected 50
+bs 50
+data from 10 to 20, energy:23.302944
+data from 20 to 30, energy:16.605888
+data from 30 to 35, energy:15.302944
+data from 35 to 50, energy:18.31672
+data from 35 to 30, energy:16.619663
+data from 30 to 20, energy:11.908832
+data from 20 to 10, energy:14.908833
+node down 30
+data from 35 to 50, energy:13.936381
+data from 20 to 10, energy:13.211777
+data from 20 to 35, energy:8.120608
+data from 35 to 50, energy:11.253099
+node down 35
+node down 20
+bs 10,20,30,35,50
+added 20-10
+added 35-30
+added 35-50
+elected 20
+elected 50
+bs 20,50
+added 30-20
+elected 50
+bs 50
+data from 10 to 20, energy:23.302944
+data from 20 to 30, energy:16.605888
+data from 30 to 35, energy:15.302944
+data from 35 to 50, energy:18.31672
+data from 35 to 30, energy:16.619663
+data from 30 to 20, energy:11.908832
+data from 20 to 10, energy:14.908833
+node down 30
+data from 35 to 50, energy:13.936381
+data from 20 to 10, energy:13.211777
+data from 20 to 35, energy:8.120608
+data from 35 to 50, energy:11.253099
+node down 35
+node down 20
+bs 10,20,30,35,50
+added 20-10
+added 35-30
+added 35-50
+elected 20
+elected 50
+bs 20,50
+added 30-20
+elected 50
+bs 50
+data from 10 to 20, energy:23.302944
+data from 20 to 30, energy:16.605888
+data from 30 to 35, energy:15.302944
+data from 35 to 50, energy:18.31672
+data from 35 to 30, energy:16.619663
+data from 30 to 20, energy:11.908832
+data from 20 to 10, energy:14.908833
+node down 30
+data from 35 to 50, energy:13.936381
+data from 20 to 10, energy:13.211777
+data from 20 to 35, energy:8.120608
+data from 35 to 50, energy:11.253099
+node down 35
+node down 20
+bs 10,20,30,35,50,60,65,70,80
+added 20-10
+added 80-30
+added 80-35
+added 60-50
+added 60-65
+added 50-70
+elected 20
+elected 70
+elected 80
+bs 20,70,80
+added 30-20
+added 80-70
+elected 80
+bs 80
+elected 80
+bs 80
+elected 80
+bs 80
+bs 10,20,30,35,50,60,65,70,80
+added 20-10
+added 80-30
+added 80-35
+added 60-50
+added 60-65
+added 50-70
+elected 20
+elected 70
+elected 80
+bs 20,70,80
+added 30-20
+added 80-70
+elected 80
+bs 80
+elected 80
+bs 80
+elected 80
+bs 80
+bs 10,20,30,35,50,60,65,70,80
+added 20-10
+added 80-30
+added 80-35
+added 60-50
+added 60-65
+added 50-70
+elected 20
+elected 70
+elected 80
+bs 20,70,80
+added 30-20
+added 80-70
+elected 80
+bs 80
+elected 80
+bs 80
+elected 80
+bs 80
+bs 10,20,30,35,50,60,65,70,80
+added 20-10
+added 80-30
+added 80-35
+added 60-50
+added 60-65
+added 50-70
+elected 20
+elected 70
+elected 80
+bs 20,70,80
+added 30-20
+added 80-70
+elected 80
+bs 80
+elected 80
+bs 80
+elected 80
+bs 80
+bs 10,20,30,35,50
+added 20-10
+added 35-30
+added 35-50
+elected 20
+elected 50
+bs 20,50
+added 30-20
+elected 50
+bs 50
+data from 10 to 20, energy:23.302944
+data from 20 to 30, energy:16.605888
+data from 30 to 35, energy:15.302944
+data from 35 to 50, energy:18.31672
+data from 35 to 30, energy:16.619663
+data from 30 to 20, energy:11.908832
+data from 20 to 10, energy:14.908833
+node down 30
+data from 35 to 50, energy:13.936381
+data from 20 to 10, energy:13.211777
+data from 20 to 35, energy:8.120608
+data from 35 to 50, energy:11.253099
+node down 35
+node down 20
+bs 10,20,30,35,50
+added 20-10
+added 35-30
+added 35-50
+elected 20
+elected 50
+bs 20,50
+added 30-20
+elected 50
+bs 50
+data from 10 to 20, energy:23.302944
+data from 20 to 30, energy:16.605888
+data from 30 to 35, energy:15.302944
+data from 35 to 50, energy:18.31672
+data from 35 to 30, energy:16.619663
+data from 30 to 20, energy:11.908832
+data from 20 to 10, energy:14.908833
+node down 30
+data from 35 to 50, energy:13.936381
+data from 20 to 10, energy:13.211777
+data from 20 to 35, energy:8.120608
+data from 35 to 50, energy:11.253099
+node down 35
+node down 20
+bs 10,20,30,35,50
+added 20-10
+added 35-30
+added 35-50
+elected 20
+elected 50
+bs 20,50
+added 30-20
+elected 50
+bs 50
+data from 10 to 20, energy:23.302944
+data from 20 to 30, energy:16.605888
+data from 30 to 35, energy:15.302944
+data from 35 to 50, energy:18.31672
+data from 35 to 30, energy:16.619663
+data from 30 to 20, energy:11.908832
+data from 20 to 10, energy:14.908833
+node down 30
+data from 35 to 50, energy:13.936381
+data from 20 to 10, energy:13.211777
+data from 20 to 35, energy:8.120608
+data from 35 to 50, energy:11.253099
+node down 35
+node down 20
+bs 10,20,30,35,50
+added 20-10
+added 35-30
+added 35-50
+elected 20
+elected 50
+bs 20,50
+added 30-20
+elected 50
+bs 50
+data from 10 to 20, energy:23.302944
+data from 20 to 30, energy:16.605888
+data from 30 to 35, energy:15.302944
+data from 35 to 50, energy:18.31672
+data from 35 to 30, energy:16.619663
+data from 30 to 20, energy:11.908832
+data from 20 to 10, energy:14.908833
+node down 30
+data from 35 to 50, energy:13.936381
+data from 20 to 10, energy:13.211777
+data from 20 to 35, energy:8.120608
+data from 35 to 50, energy:11.253099
+node down 35
+node down 20
+bs 10,20,30,35,50
+added 20-10
+added 35-30
+added 35-50
+elected 20
+elected 50
+bs 20,50
+added 30-20
+elected 50
+bs 50
+data from 10 to 20, energy:23.302944
+data from 20 to 30, energy:16.605888
+data from 30 to 35, energy:15.302944
+data from 35 to 50, energy:18.31672
+data from 35 to 30, energy:16.619663
+data from 30 to 20, energy:11.908832
+data from 20 to 10, energy:14.908833
+node down 30
+data from 35 to 50, energy:13.936381
+data from 20 to 10, energy:13.211777
+data from 20 to 35, energy:8.120608
+data from 35 to 50, energy:11.253099
+node down 35
+node down 20
+bs 10,20,30,35,50
+added 20-10
+added 35-30
+added 35-50
+elected 20
+elected 50
+bs 20,50
+added 30-20
+elected 50
+bs 50
+data from 10 to 20, energy:23.302944
+data from 20 to 30, energy:16.605888
+data from 30 to 35, energy:15.302944
+data from 35 to 50, energy:18.31672
+data from 35 to 30, energy:16.619663
+data from 30 to 20, energy:11.908832
+data from 20 to 10, energy:14.908833
+node down 30
+data from 35 to 50, energy:13.936381
+data from 20 to 10, energy:13.211777
+data from 20 to 35, energy:8.120608
+data from 35 to 50, energy:11.253099
+node down 35
+node down 20
+bs 10,20,30,35,50,60,65,70,80
+added 20-10
+added 80-30
+added 80-35
+added 60-50
+added 60-65
+added 50-70
+elected 20
+elected 70
+elected 80
+bs 20,70,80
+added 30-20
+added 80-70
+elected 80
+bs 80
+elected 80
+bs 80
+elected 80
+bs 80
+bs 10,20,30,35,50,60,65,70,80
+added 20-10
+added 80-30
+added 80-35
+added 60-50
+added 60-65
+added 50-70
+elected 20
+elected 70
+elected 80
+bs 20,70,80
+added 30-20
+added 80-70
+elected 80
+bs 80
+elected 80
+bs 80
+elected 80
+bs 80
+bs 10,20,30,35,50
+added 20-10
+added 35-30
+added 35-50
+elected 20
+elected 50
+bs 20,50
+added 30-20
+elected 50
+bs 50
+data from 10 to 20, energy:23.302944
+data from 20 to 30, energy:16.605888
+data from 30 to 35, energy:15.302944
+data from 35 to 50, energy:18.31672
+data from 35 to 30, energy:16.619663
+data from 30 to 20, energy:11.908832
+data from 20 to 10, energy:14.908833
+node down 30
+data from 35 to 50, energy:13.936381
+data from 20 to 10, energy:13.211777
+data from 20 to 35, energy:8.120608
+data from 35 to 50, energy:11.253099
+node down 35
+node down 20
+bs 10,20,30,35,50
+added 20-10
+added 35-30
+added 35-50
+elected 20
+elected 50
+bs 20,50
+added 30-20
+elected 50
+bs 50
+data from 10 to 20, energy:23.302944
+data from 20 to 30, energy:16.605888
+data from 30 to 35, energy:15.302944
+data from 35 to 50, energy:18.31672
+data from 35 to 30, energy:16.619663
+data from 30 to 20, energy:11.908832
+data from 20 to 10, energy:14.908833
+node down 30
+data from 35 to 50, energy:13.936381
+data from 20 to 10, energy:13.211777
+data from 20 to 35, energy:8.120608
+data from 35 to 50, energy:11.253099
+node down 35
+node down 20
+bs 10,20,30,35,50
+added 20-10
+added 35-30
+added 35-50
+elected 20
+elected 50
+bs 20,50
+added 30-20
+elected 50
+bs 50
+data from 10 to 20, energy:23.302944
+data from 20 to 30, energy:16.605888
+data from 30 to 35, energy:15.302944
+data from 35 to 50, energy:18.31672
+data from 35 to 30, energy:16.619663
+data from 30 to 20, energy:11.908832
+data from 20 to 10, energy:14.908833
+node down 30
+data from 35 to 50, energy:13.936381
+data from 20 to 10, energy:13.211777
+data from 20 to 35, energy:8.120608
+data from 35 to 50, energy:11.253099
+node down 35
+node down 20
+bs 88,111,7
+added 7-88
+elected 88
+bs 88
+bs 3,9,5,7,4
+added 9-3
+added 7-5
+elected 9
+elected 7
+bs 9,7
+data from 3 to 9, energy:9.8593
+node down 3
+data from 7 to 5, energy:17.205267
+bs 10,20,30,35,50
+added 20-10
+added 35-30
+added 35-50
+elected 20
+elected 50
+bs 20,50
+added 30-20
+elected 50
+bs 50
+bs 10,20,30,35,50,60,65,70,80
+added 20-10
+added 80-30
+added 80-35
+added 60-50
+added 60-65
+added 50-70
+elected 20
+elected 70
+elected 80
+bs 20,70,80
+added 30-20
+added 80-70
+elected 80
+bs 80
+elected 80
+bs 80
+elected 80
+bs 80
+bs 10,20,30,35,50
+added 20-10
+added 35-30
+added 35-50
+elected 20
+elected 50
+bs 20,50
+added 30-20
+elected 50
+bs 50
+data from 10 to 20, energy:23.302944
+data from 20 to 30, energy:16.605888
+data from 30 to 35, energy:15.302944
+data from 35 to 50, energy:18.31672
+data from 35 to 30, energy:16.619663
+data from 30 to 20, energy:11.908832
+data from 20 to 10, energy:14.908833
+node down 30
+data from 35 to 50, energy:13.936381
+data from 20 to 10, energy:13.211777
+data from 20 to 35, energy:8.120608
+data from 35 to 50, energy:11.253099
+node down 35
+node down 20
+bs 10,20,30,35,50
+added 20-10
+added 35-30
+added 35-50
+elected 20
+elected 50
+bs 20,50
+added 30-20
+elected 50
+bs 50
+data from 10 to 20, energy:23.302944
+data from 20 to 30, energy:16.605888
+data from 30 to 35, energy:15.302944
+data from 35 to 50, energy:18.31672
+data from 35 to 30, energy:16.619663
+data from 30 to 20, energy:11.908832
+data from 20 to 10, energy:14.908833
+node down 30
+data from 35 to 50, energy:13.936381
+data from 20 to 10, energy:13.211777
+data from 20 to 35, energy:8.120608
+data from 35 to 50, energy:11.253099
+node down 35
+node down 20

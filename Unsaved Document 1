@@ -1,0 +1,25 @@
+bs 10,20,30,35,50,60,65,70,80
+added 20-10
+elected 20
+added 80-30
+added 80-35
+elected 80
+added 60-50
+added 60-65
+added 50-70
+elected 70
+bs 20,70,80
+added 30-20
+added 80-70
+elected 80
+bs 80
+MST Complete- 80
+MST Complete- 20
+MST Complete- 35
+MST Complete- 50
+MST Complete- 65
+MST Complete- 30
+MST Complete- 60
+MST Complete- 10
+MST Complete- 70
+END!!

@@ -1,0 +1,388 @@
+import java.util.ArrayList;
+import java.util.Hashtable;
+public class Node{ //add implements Runnable later!!!
+	private int nodeNumber;
+	private int nodeID;
+	private float energy;
+	private Coord coord;
+	private boolean leader;
+	private Controller controller;
+	private BaseStation basestation;
+//	private int lvl=0;
+	private Edge near;
+	private Node bridge;
+	private Edge sendEdge;
+	private ArrayList<Edge> neighbours=new ArrayList<Edge>();
+	private ArrayList<Edge> tree=new ArrayList<Edge>();
+//	private int size=0;
+	private int treeNo;
+	private int thresholdEnergy;
+	private ArrayList<Node> leaders= new ArrayList<Node>();
+	static Hashtable<Integer, Integer> nodesChecked = new Hashtable<Integer, Integer>();
+	static Hashtable<Integer, Integer> nodesChecked2 = new Hashtable<Integer, Integer>();
+	static Hashtable<Integer, Integer> nodesChecked3 = new Hashtable<Integer, Integer>();
+	static Hashtable<Integer, Integer> nodesChecked4 = new Hashtable<Integer, Integer>();
+	
+	public Node(int num, int node_id, Coord co, float e, int t){
+		this.nodeNumber= num;
+		this.nodeID= node_id;
+		this.energy= e;
+		this.coord= co;
+		this.leader= true;
+		this.bridge= this;
+		this.thresholdEnergy=t;
+		//ADD CODE TO CALL CONTROLLER TO GIVE NEIGHBOUR LIST!!!
+	}
+	public Coord getCoord(){
+		return this.coord;
+	}
+	
+	public int getNodeID(){
+		return nodeID;
+	}
+	
+	public void setCtrl(Controller ctrl){
+		this.controller= ctrl;
+	}
+	
+	public void setBS(BaseStation bs){
+		this.basestation= bs;
+	}
+	
+	public void discover(){ //broadcasts discover messages and gets a reply from the neighbours with their distances
+		this.neighbours=controller.getNeighbours(nodeNumber);
+		//System.out.print(neighbours.get(0).getDist()+" ");
+		//System.out.print(neighbours.get(1).getDist()+" ");
+		//System.out.print(neighbours.get(2).getDist()+" ");
+		//System.out.println(neighbours.get(3).getDist());
+	}
+	
+	public void sort(){
+		Edge tempNode;
+		for (int i=0; i <neighbours.size()-1; i++){
+			for (int j=0; j < neighbours.size()-1-i; j++){
+				if (neighbours.get(j).getDist() > neighbours.get(j+1).getDist()){
+					tempNode= neighbours.get(j);
+					neighbours.set(j,neighbours.get(j+1));
+					neighbours.set(j+1, tempNode);
+				}
+			}
+		}
+	}
+	
+	public void addToTree(Node n, float f){
+		Edge e= new Edge(n,f);
+		if (!has1(tree, e)){
+			tree.add(e);
+			//System.out.println("added "+e.getDest().getNodeID()+"-"+this.nodeID);
+			//n.addToTree(this, f);
+		}	
+		/*if (!has1(tree,e)){
+			tree.add(e);
+		}	
+		else{
+			if(has1(tree,near)){
+				System.out.println("added "+n.getNodeID()+"-"+this.nodeID);
+			}
+		}*/
+		
+	//	size= tree.size();
+		//System.out.println(tree.get(0));
+		//if (this.getNearest().getDest().getNodeID()!= n.getNodeID()){
+			//n.addToTree(this, f);
+		//}
+	}
+	
+	public boolean has(ArrayList<Edge> eList, Edge e){
+		for (int i=0; i<eList.size(); i++){
+			if (eList.get(i).getDest().getNearest().getDist()==e.getDist()){// && (eList.get(i).getDest().getNodeID()==e.getDest().getNodeID())){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public float energyCost(float dist){
+		float energy= (float) (dist*1.2);
+		return energy;
+	}
+	
+	public boolean has1(ArrayList<Edge> eList, Edge e){
+		for (int i=0; i<eList.size(); i++){
+			if (eList.get(i).getDest()==e.getDest()){// && (eList.get(i).getDest().getNodeID()==e.getDest().getNodeID())){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public void setTreeNo(int treen){
+		this.treeNo= treen;
+	}
+	
+	public int getTreeNo(){
+		return this.treeNo;
+	}
+	
+	public boolean isLeader(){
+		return leader;
+	}
+	
+	public void merge(){
+		//System.out.println("MERGE");
+			Node nearNode;
+			nearNode=near.getDest();
+			//System.out.println(this.nodeID+" "+near.getDest().getNodeID());
+			if (!has1(tree, near)){
+				controller.neighbour(nearNode, this, near.getDist());
+				tree.add(near);
+				System.out.println("added "+near.getDest().getNodeID()+"-"+this.nodeID);
+			}	
+			
+			//System.out.println(tree.get(0).getDest().getNearest().getDest().getNodeID()+" "+tree.get(0).getDest().getNearest().getDist()+" "+near.getDest().getNodeID()+" "+near.getDist());
+		//for (int j=0; j< size; j++){
+			//System.out.println("TREE for "+nodeID+" "+ tree.get(j).getDest().getNodeID());
+			//}
+		if (has(tree,near)){
+			if (nodeID>near.getDest().getNodeID()){
+				leader= true;
+				leaders.add(this);
+				System.out.println("elected "+nodeID);
+				for (int j=0; j< tree.size(); j++){
+					tree.get(j).getDest().getTreeNo();
+				//	System.out.println("Tree check "+tree.get(j).getDest().getNodeID()+" "+tree.get(j).getDest().getTreeNo());
+				}
+			}
+			else{
+				leader = false;
+			}
+		}
+		else{
+			leader = false;
+		}
+		//System.out.println("IN NODE"+leaders.get(0).getNodeID());
+		basestation.done2();
+			//
+	}
+	
+	public void merge2(){
+	//	System.out.println("MERGE2!!!!");
+		if (this.isLeader()==true){
+			Node nearNode;
+			nearNode=near.getDest();
+			//if (!has1(bridge.tree, near)){
+			//	tree.add(near);
+			//}
+			if (!has1(bridge.tree, near)){
+				nearNode.addToTree(bridge, near.getDist());
+				tree.add(near);
+				System.out.println("added "+near.getDest().getNodeID()+"-"+this.nodeID);
+			}
+			if (has(bridge.tree,near)){
+				if (nodeID>near.getDest().getNodeID()){
+					leader= true;
+					leaders.add(this);
+					System.out.println("elected "+nodeID);
+					for (int j=0; j< tree.size(); j++){
+						tree.get(j).getDest().getTreeNo();
+					}
+				}
+				else{
+					leader = false;
+				}
+			}
+			else{
+				leader = false;
+			}
+		}
+		basestation.done2();
+	}
+	
+	public Edge getNearest(){
+		return near;
+	}
+	
+	public Node getBridge(){
+		return bridge;
+	}
+	
+	public Edge setNearest(){
+		//System.out.println("In node number"+ nodeID);
+		bridge= this;
+		nodesChecked2.put(this.nodeID, 1);
+		float min;
+		int l=0;
+		do{
+			l++;
+			if (l>neighbours.size()){
+				//basestation.terminate();
+				l=neighbours.size();
+				break;
+			}
+		}while (neighbours.get(l-1).getDest().getTreeNo()== treeNo && (l<=neighbours.size()));
+		if(l==neighbours.size()){
+			return null;
+		}
+		near= neighbours.get(l-1);
+		min= neighbours.get(l-1).getDist();
+		//System.out.println("Neighbour selected "+ near+ "distance "+ min);
+		int count=0;
+		float p;
+		Node nearNode=neighbours.get(l-1).getDest();
+		for (int i=0; i < tree.size(); i++){
+			if (!(nodesChecked2.containsKey(tree.get(i).getDest().getNodeID()))){
+				nodesChecked2.put(tree.get(i).getDest().getNodeID(),1);
+				p= tree.get(i).getDest().setNearest().getDist();
+				if (min>p){
+					min= p;
+					nearNode= tree.get(i).getDest().getNearest().getDest();
+					Edge tempEdge1 =new Edge(nearNode, min);
+					near= tempEdge1;
+					bridge= tree.get(i).getDest().getBridge();
+				}
+				count=1;
+			}
+			if (count==0){
+				return neighbours.get(l-1);
+			}
+			
+		}
+		//	tree.get(0).getDest().getNearest().getDist();
+		//System.out.print(min+" "+ neighbours.get(0).getDest().getNodeID());
+		Edge tempEdge= new Edge(nearNode, min);
+		return (tempEdge);
+	}
+	
+	public void startMST(){
+		sort();
+		treeNo= nodeID;
+		//System.out.println("Starting Node-"+ nodeID+ " "+ neighbours.size());
+		if (neighbours.size()==0){
+			leader=false;
+			terminateTree(this.treeNo);
+		}
+		else{
+			//System.out.println(neighbours.get(0).getDest().getNodeID());
+			near=neighbours.get(0);
+			//System.out.println(near.getDest().getNodeID());
+		}
+		
+		
+		//near=getNearest();
+		basestation.done();
+	}
+	
+	public void setTree(int tree1){
+		nodesChecked.put(nodeID, 1);
+		this.treeNo=tree1;
+		for (int i=0; i < tree.size(); i++){
+			if (!(nodesChecked.containsKey(tree.get(i).getDest().getNodeID()))){
+				nodesChecked.put(tree.get(i).getDest().getNodeID(),1);
+				tree.get(i).getDest().setTree(tree1);
+			}
+		}
+	}
+	
+	public void terminateTree(int tree1){
+		nodesChecked3.put(nodeID, 1);
+		//this.treeNo=tree1;
+		basestation.terminate(this);
+		//neighbour.remove(this);
+		for (int i=0; i < tree.size(); i++){
+			if (!(nodesChecked3.containsKey(tree.get(i).getDest().getNodeID()))){
+				nodesChecked3.put(tree.get(i).getDest().getNodeID(),1);
+				tree.get(i).getDest().terminateTree(tree1);
+				//tree.get(i).getDest().setTree(tree1);
+			}
+		}
+	}
+		
+	public void bcst(){
+		nodesChecked4.clear();
+		broadcast(this);
+	}
+	
+	public void failBcst(ArrayList<Edge> newTree, int j){
+		Edge tempEdge;
+		float tempDist=0;
+		if (energy>thresholdEnergy){
+			for (int i=0; i< newTree.size(); i++){
+				for (int k=0; k< neighbours.size(); k++){
+					if (newTree.get(i).getDest().getNodeID()== neighbours.get(k).getDest().getNodeID())
+						tempDist= neighbours.get(k).getDist();
+				}
+				if (tempDist>0){
+				tempEdge= new Edge(newTree.get(i).getDest(), tempDist);
+				if(!has1(tree, tempEdge))
+					tree.add(tempEdge);
+				}
+			}
+		}
+		//tree.addAll(newTree);
+	}
+	
+	public void broadcast(Node n){
+		nodesChecked4.put(nodeID, 1);
+		for (int i=0; i < tree.size(); i++){
+			if ((!(nodesChecked4.containsKey(tree.get(i).getDest().getNodeID())))&&(tree.get(i).getDest().energy>=thresholdEnergy)&&(energy>=thresholdEnergy)){
+				nodesChecked4.put(tree.get(i).getDest().getNodeID(),1);
+				this.energy= this.energy- (float)(1.2*tree.get(i).getDist()); 
+				System.out.println("data from "+nodeID+" to "+tree.get(i).getDest().getNodeID()+", "+"energy:"+this.energy);
+				tree.get(i).getDest().broadcast(this);
+				if (this.energy<thresholdEnergy){
+					System.out.println("node down "+nodeID);
+					//if (i<(tree.size()-1)){
+					for(int l=0; l<tree.size(); l++){
+						tree.get(l).getDest().failBcst(this.tree, 0);
+					}
+					break;
+					//}
+				}
+				//tree.get(i).getDest().setTree(tree1);
+			}
+		}
+	}
+	
+	public void levelMST(){
+		
+		
+		//
+			//
+			//for (int i=0; i< neighbours.size(); i++){
+				//if (neighbours.get(i).getDest().getNodeID()==tree.get(j).getDest().getNodeID()){
+					//neighbours.remove(i);
+					//System.out.println("Removed from neighbour");
+				//}
+				//}
+			//}
+		
+		//Node nearNode;
+		if (this.isLeader()==true){
+			//for (int j=0; j< size; j++){
+			//System.out.println("TREE for "+nodeID+" "+ tree.get(j).getDest().getNodeID());
+			//}
+			setTree(this.nodeID);
+			nodesChecked.clear();
+			near= setNearest();
+			nodesChecked2.clear();
+			if (near==null){
+				leader=false;
+				terminateTree(this.treeNo);
+				//basestation.terminate(this.nodeNumber);
+				
+			}
+			else{
+			//	System.out.println(near.getDest().getNodeID());
+			//	System.out.println(bridge.getNodeID());
+			}
+		}
+		//if (near!=null)
+		basestation.done3();
+		//System.out.println(neighbours.get(0).getDist()+" "+neighbours.get(0).getDest().getNodeID());
+		//System.out.println(neighbours.get(1).getDist()+" "+neighbours.get(1).getDest().getNodeID());
+		//System.out.print(neighbours.get(2).getDist()+" ");
+		//System.out.println(neighbours.get(3).getDist());
+		
+		
+	}
+}
